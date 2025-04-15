@@ -1,0 +1,24 @@
+
+Trương Thái Du
+8. Chuyện bếp núc viết sách: số trang và số chữ
+Thi thoảng đây đó trong các bài phỏng vấn, ta vẫn nghe nhiều nhà văn nói: “Tôi đang viết quyển tiểu thuyết cỡ 300 trang…”. “Cuốn sách sắp tới độ năm sáu trăm trang…”. “Tôi sẽ dành 700 trang cho tập hai…”. “Tôi đã viết hai ba tiểu thuyết trên 400 trang…”. Thật mơ hồ, tuy nhiên sự nhập nhoạng ở đây lại nằm trong định nghĩa thế nào là một trang viết. Số chữ trong một trang viết tỉ lệ với khổ giấy và độ lớn của ký tự. Sẽ có người phản bác không phải nhiều chữ là hay. Vâng, tôi chỉ muốn trình bày khía cạnh thuần kỹ thuật.
+Tôi không rõ ở Tây người ta có ước lượng độ dài ngắn của 1 quyển sách bằng số chữ hay không. Mới đây, qua bài “Đầu và cuối của tiểu thuyết” [1], Milorad Pavic cho người đọc thấy ông cũng từng đếm chữ. 
+Người Tàu thì khác. Phần lớn sách xuất bản ở Trung Hoa đều ghi chú số chữ rõ ràng. Hành xử này không chứng minh tác giả Tàu nhận thức cao hơn tác giả Việt, nó là truyền thống lâu đời. Thật vậy, tôi tin muộn nhất người Tàu đã đếm chữ khi sách thẻ trúc ra đời, cách nay trên 2500 năm. Thẩm mỹ đòi hỏi mọi chữ Tàu, bất kể số nét, phải chiếm diện tích như nhau. Tùy chiều dài thẻ trúc, tùy độ lớn của chữ, người ta dễ dàng đếm được số chữ trên một thẻ, nhân với số thẻ sẽ thành số chữ trong tập, lại nhân với số tập thì ra số chữ gần đúng trong quyển sách. Ai chẳng biết Sử Ký Tư Mã Thiên có 520 ngàn chữ. Trước Tư Mã Thiên, Lã Bất Vi từng quảng cáo sách của mình ở cửa chợ Hàm Dương. Ông ta treo giải ngàn vàng cho ai thêm bớt được một chữ trong tổng số hơn hai mươi vạn chữ của Lã Thị Xuân Thu. Sau này có giấy, đếm chữ phức tạp hơn nhưng họ vẫn làm, nên ta mới biết Hồng Lâu Mộng gồm 730 ngàn chữ.
+Tôi từng có kinh nghiệm ‘bực bội’ với nhiều quyển sách xuất bản tại Việt 
+Nam
+. Lần nọ trên chuyến xe đò 6 tiếng từ Đà Lạt đến Sài Gòn, tôi đem theo 1 quyển sách 600 trăm trang khổ 13cm x 19cm để tận dụng thời gian. Không may sách dành cho người cận nặng nên chữ to như con bò. Đọc sách không mỏi mắt nhưng mỏi tay vì cứ phải sang trang liên tục. Hậu quả là tôi mất toi 3 tiếng một cách vô vị.
+Người Ta ở Tây cũng chẳng khá hơn. Một tác giả sống giữa thủ đô văn hóa Tây dương từng phán: &quot;Tất cả các cuốn Tứ Thư, Ngũ Kinh nếu gộp chung lại tất cả và in thành một cuốn sách thì cũng chỉ vài trăm trang thôi, nghĩa là chỉ bằng một nửa cuốn sách mà các vị đang cầm trong tay thôi. Một người bình thường có thể học một tuần lễ là xong, thế mà các sĩ tử cứ nhai đi nhai lại trong mấy ngàn năm thì hỏi kiến thức có cái gì đáng kể?&quot;. 
+“Ngạc nhiên chưa?” – Tôi mạn phép nhại một lời thoại quảng cáo – Và còn ngạc nhiên hơn nữa khi tôi đem vấn đề “số trang, số chữ” tham khảo người bạn vong niên viết văn. Anh nhíu mày khó chịu và mắng tôi như mắng đứa trẻ con vô lễ: “Thằng dở người! Ai chẳng biết với việc số hóa văn bản hôm nay, nhấn chuột hai lần là có ngay số chữ. Cái khác nhau giữa Ta với Tây và Tàu là bản sắc Việt Nam. Mày muốn tự đồng hóa thì cứ tự nhiên. Đừng bôi bẩn chúng tao!”.
+Tôi buồn lắm. Thì ra trên đời này chỉ tồn tại một sự thật duy nhất đó là không có gì là sự thật. Mọi cái khác mang tên gọi sự thật, chỉ là sản phẩm của các mức độ nhận thức. Nhận thức lạc lõng mang nhiều cảm tính hồ đồ của tôi chắc chắn chẳng thay đổi được thói quen của nhiều người. 
+Chú thích:
+[1] 
+http://evan.vnexpress.net/Functions/WorkContent/?CatID=4&amp;amp;TypeID=20&amp;amp;WorkID=725
+………..
+Về bản quyền bài này
+: Đây là bản gốc của bài viết đã bị tạp chí evan biên tập không theo ý tác giả tháng 8.2004.
+Về bản quyền chung
+: Tất cả các bài tạp văn kí tên Trương Thái Du dưới 30 ngàn chữ đều được tác giả để ở chế độ bản quyền mở. Mọi cá nhân hoặc tổ chức có thể tải về miễn phí từ vnthuquan.net. Các hình thức sử dụng đuợc chấp nhận rộng rãi: trích dẫn, in trên báo, in thành sách, tái lưu trữ ở các loại “diễn đàn” hoặc kho sách điện tử khác.v.v.. Xin miễn sửa đổi hoặc biên tập thêm. Tác giả chỉ chịu trách nhiệm bản thảo tại kho sách vnthuquan.net với các phiên bản tu chỉnh sau ngày 01.01.2006.
+Mục lục
+8. Chuyện bếp núc viết sách: số trang và số chữ
+8. Chuyện bếp núc viết sách: số trang và số chữ
+Trương Thái DuChào mừng các bạn đón đọc đầu sách từ dự án sách cho thiết bị di độngNguồn: http://vnthuquan.netPhát hành: Nguyễn Kim Vỹ.Lời cuối:Cám ơn bạn đã theo dõi hết cuốn truyện.Nguồn: http://vnthuquan.netPhát hành: Nguyễn Kim Vỹ.        Nguồn: Tác giảĐược bạn:  đưa lên        vào ngày: 28 tháng 1 năm 2005
