@@ -3,6 +3,7 @@ import math
 import json
 import time
 import pickle
+import re
 from tqdm import tqdm
 from collections import defaultdict, Counter
 from underthesea import word_tokenize
@@ -10,6 +11,13 @@ from underthesea import word_tokenize
 FOLDER_PATH = "Text"
 DOC_FILE = "documents.pkl"
 FILE_FILE = "filenames.pkl"
+
+def clean_text(text):
+    # Loại bỏ các ký tự đặc biệt, giữ lại chữ, số và khoảng trắng
+    text = re.sub(r"[^\w\s]", " ", text)
+    # Bỏ các ký tự xuống dòng, tab và chuẩn hóa khoảng trắng
+    text = re.sub(r"\s+", " ", text)
+    return text.strip()
 
 start_time = time.time()
 
@@ -29,7 +37,8 @@ else:
             filepath = os.path.join(FOLDER_PATH, file)
             with open(filepath, "r", encoding="utf-8") as f:
                 content = f.read()
-                tokens = word_tokenize(content, format="text").lower().split()
+                cleaned = clean_text(content)  # Tiền xử lý trước
+                tokens = word_tokenize(cleaned, format="text").lower().split()
                 documents.append(tokens)
                 filenames.append(file)
 
@@ -96,7 +105,7 @@ print("Ghi TF-IDF vector vào file tf-idf.json...")
 with open("tf-idf.json", "w", encoding="utf-8") as f:
     json.dump(tfidf_data, f, ensure_ascii=False, indent=2)
 
-# === Bước 6: Ghi vocab ra file ===
+# === Bước 6: Ghi từ điển vocab vào file vocab.json ===
 print("Ghi từ điển vocab vào file vocab.json...")
 with open("vocab.json", "w", encoding="utf-8") as f:
     json.dump(vocab, f, ensure_ascii=False, indent=2)

@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ff515b7-308c-4ebd-9a72-c60effb2a1f7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/BTL_DPT.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/HCSDLDPT.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TF-IDF.py" beforeDir="false" afterPath="$PROJECT_DIR$/TF-IDF.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/documents.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/documents.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/inverted_index.json" beforeDir="false" afterPath="$PROJECT_DIR$/inverted_index.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tf-idf.json" beforeDir="false" afterPath="$PROJECT_DIR$/tf-idf.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vocab.json" beforeDir="false" afterPath="$PROJECT_DIR$/vocab.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +35,7 @@
     "Python.temp.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "last_opened_file_path": "E:/Downloads/BTL_DPT"
   }
 }]]></component>
