@@ -4,27 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="63452a77-1f1e-4d0b-9fe2-5e624134c40f" name="Changes" comment="" />
+    <list default="true" id="0ff515b7-308c-4ebd-9a72-c60effb2a1f7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/BTL_DPT.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/HCSDLDPT.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TF-IDF.py" beforeDir="false" afterPath="$PROJECT_DIR$/TF-IDF.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/metadata.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Python Script" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;customColor&quot;: &quot;&quot;,
-  &quot;associatedIndex&quot;: 2
-}</component>
-  <component name="ProjectId" id="2vZmgcayo9ustPelYQqn8npMfN3" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2wiAyWC5NYZT31l8zye912HXvfJ" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -32,11 +31,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.TF-IDF.executor": "Run",
-    "Python.temp1.executor": "Run",
+    "Python.temp.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "E:/Downloads/DPT",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "E:/Downloads/BTL_DPT"
   }
 }]]></component>
   <component name="SharedIndexes">
@@ -49,11 +48,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="63452a77-1f1e-4d0b-9fe2-5e624134c40f" name="Changes" comment="" />
-      <created>1744361083908</created>
+      <changelist id="0ff515b7-308c-4ebd-9a72-c60effb2a1f7" name="Changes" comment="" />
+      <created>1746514274895</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1744361083908</updated>
+      <updated>1746514274895</updated>
     </task>
     <servers />
   </component>
