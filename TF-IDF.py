@@ -11,6 +11,7 @@ from underthesea import word_tokenize
 FOLDER_PATH = "Text"
 DOC_FILE = "documents.pkl"
 FILE_FILE = "filenames.pkl"
+IDF_FILE = "idf.pkl"
 
 def clean_text(text):
     # Loại bỏ các ký tự đặc biệt, giữ lại chữ, số và khoảng trắng
@@ -64,6 +65,8 @@ vocab = sorted(vocab)
 print("Tính IDF cho từng từ...")
 N = len(documents)
 idf = {term: math.log(N / (1 + len(inverted_index[term]))) for term in vocab}
+with open(IDF_FILE, "wb") as f:
+    pickle.dump(idf, f)
 
 # === Bước 3: Tính TF-IDF từng văn bản và lưu metadata ===
 print("Tính TF-IDF và lưu metadata...")

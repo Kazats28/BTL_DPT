@@ -5,18 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ff515b7-308c-4ebd-9a72-c60effb2a1f7" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/gui_search.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search_engine/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search_engine/engine.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search_engine/loader.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search_engine/tokenizer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/search_engine/utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TF-IDF.py" beforeDir="false" afterPath="$PROJECT_DIR$/TF-IDF.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/documents.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/documents.pkl" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inverted_index.json" beforeDir="false" afterPath="$PROJECT_DIR$/inverted_index.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tf-idf.json" beforeDir="false" afterPath="$PROJECT_DIR$/tf-idf.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vocab.json" beforeDir="false" afterPath="$PROJECT_DIR$/vocab.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,6 +41,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Python.TF-IDF.executor": "Run",
+    "Python.engine.executor": "Run",
+    "Python.gui_search.executor": "Run",
     "Python.temp.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
