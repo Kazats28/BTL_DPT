@@ -1,14 +1,16 @@
-import json
+import pickle
 
-def load_json(path):
-    with open(path, "r", encoding="utf-8") as f:
-        return json.load(f)
+def load_pkl(path):
+    with open(path, 'rb') as f:
+        return pickle.load(f)
 
 def load_all_data():
-    vocab = load_json("vocab.json")
-    metadata = load_json("metadata.json")
-    tfidf_data = load_json("tf-idf.json")
+    vocab = load_pkl("vocab.pkl")
+    metadata = load_pkl("metadata.pkl")
+    tfidf_data = load_pkl("tf-idf.pkl")
     tfidf_dict = {doc["doc_id"]: doc["vector_sparse"] for doc in tfidf_data}
     tfidf_data = tfidf_dict
-    inverted_index = load_json("inverted_index.json")
-    return vocab, metadata, tfidf_data, inverted_index
+    inverted_index = load_pkl("inverted_index.pkl")
+    norm2 = load_pkl("norm2.pkl")
+    idf = load_pkl("idf.pkl")
+    return vocab, metadata, tfidf_data, inverted_index, norm2, idf

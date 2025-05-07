@@ -3,22 +3,18 @@ import math
 import json
 import time
 import pickle
-import re
 from tqdm import tqdm
 from collections import defaultdict, Counter
-from underthesea import word_tokenize
+from pyvi import ViTokenizer
 
 FOLDER_PATH = "Text"
 DOC_FILE = "documents.pkl"
 FILE_FILE = "filenames.pkl"
 IDF_FILE = "idf.pkl"
-
-def clean_text(text):
-    # Loại bỏ các ký tự đặc biệt, giữ lại chữ, số và khoảng trắng
-    text = re.sub(r"[^\w\s]", " ", text)
-    # Bỏ các ký tự xuống dòng, tab và chuẩn hóa khoảng trắng
-    text = re.sub(r"\s+", " ", text)
-    return text.strip()
+METADATA_FILE = "metadata.pkl"
+VOCAB_FILE = "vocab.pkl"
+TFIDF_FILE = "tf-idf.pkl"
+INVERTED_INDEX_FILE = "inverted_index.pkl"
 
 start_time = time.time()
 
@@ -38,8 +34,7 @@ else:
             filepath = os.path.join(FOLDER_PATH, file)
             with open(filepath, "r", encoding="utf-8") as f:
                 content = f.read()
-                cleaned = clean_text(content)  # Tiền xử lý trước
-                tokens = word_tokenize(cleaned, format="text").lower().split()
+                tokens = ViTokenizer.tokenize(content).lower().split()
                 documents.append(tokens)
                 filenames.append(file)
 
@@ -99,26 +94,26 @@ for doc_id in tqdm(range(N)):
     })
 
 # === Bước 4: Ghi metadata ra file ===
-print("Ghi metadata vào file metadata.json...")
-with open("metadata.json", "w", encoding="utf-8") as f:
-    json.dump(metadata, f, ensure_ascii=False, indent=2)
+print("Ghi metadata vào file")
+with open(METADATA_FILE, "wb") as f:
+    pickle.dump(metadata, f)
 
 # === Bước 5: Ghi TF-IDF vector ra file ===
-print("Ghi TF-IDF vector vào file tf-idf.json...")
-with open("tf-idf.json", "w", encoding="utf-8") as f:
-    json.dump(tfidf_data, f, ensure_ascii=False, indent=2)
+print("Ghi TF-IDF vector vào file")
+with open(TFIDF_FILE, "wb") as f:
+    pickle.dump(tfidf_data, f)
 
 # === Bước 6: Ghi từ điển vocab vào file vocab.json ===
-print("Ghi từ điển vocab vào file vocab.json...")
-with open("vocab.json", "w", encoding="utf-8") as f:
-    json.dump(vocab, f, ensure_ascii=False, indent=2)
+print("Ghi từ điển vocab vào file")
+with open(VOCAB_FILE, "wb") as f:
+    pickle.dump(vocab, f)
 
 # === Bước 7: Ghi chỉ mục ngược với doc_id ===
-print("Ghi chỉ mục ngược vào file inverted_index.json...")
+print("Ghi chỉ mục ngược vào file")
 inverted_index_doc_ids = {term: sorted(list(doc_ids)) for term, doc_ids in inverted_index.items()}
 
-with open("inverted_index.json", "w", encoding="utf-8") as f:
-    json.dump(inverted_index_doc_ids, f, ensure_ascii=False, indent=2)
+with open(INVERTED_INDEX_FILE, "wb") as f:
+    pickle.dump(inverted_index_doc_ids, f)
 
 elapsed = time.time() - start_time
 print(f"Hoàn thành. Thời gian: {elapsed:.2f} giây.")

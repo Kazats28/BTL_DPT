@@ -3,11 +3,11 @@ from tkinter import filedialog, messagebox
 import time
 import os
 import webbrowser
+import threading
 from search_engine.loader import load_all_data
 from search_engine.engine import search_query
-
 # Load dữ liệu một lần
-vocab, metadata, tfidf_data, inverted_index = load_all_data()
+vocab, metadata, tfidf_data, inverted_index, norm2, idf = load_all_data()
 
 class SearchApp:
     def __init__(self, root):
@@ -22,7 +22,7 @@ class SearchApp:
         self.choose_btn = tk.Button(root, text="Chọn file", command=self.choose_file)
         self.choose_btn.pack()
 
-        self.search_btn = tk.Button(root, text="Tìm kiếm", command=self.search)
+        self.search_btn = tk.Button(root, text="Tìm kiếm", command=self.search_thread)
         self.search_btn.pack(pady=10)
 
         self.result_label = tk.Label(root, text="", fg="blue")
@@ -40,17 +40,45 @@ class SearchApp:
         if self.file_path:
             self.label.config(text=f"Đã chọn: {self.file_path}")
 
-    def search(self):
+    def search_thread(self):
+        self.choose_btn.config(state=tk.DISABLED)
+        self.search_btn.config(state=tk.DISABLED)
+
         if not self.file_path:
             messagebox.showerror("Lỗi", "Chưa chọn file!")
+            self.choose_btn.config(state=tk.NORMAL)
+            self.search_btn.config(state=tk.NORMAL)
             return
 
+        # Xoá kết quả cũ trước khi bắt đầu tìm
+        self.result_label.config(text="Đang tìm kiếm...")
+        for lbl in self.result_links:
+            lbl.config(text="")
+            lbl.file_path = None
+
+
+        # Bắt đầu một luồng mới để xử lý tìm kiếm
+        threading.Thread(target=self.search_background, daemon=True).start()
+
+    def search_background(self):
         start = time.time()
-        top_results = search_query(self.file_path, vocab, tfidf_data, inverted_index)
-        duration = time.time() - start
+        try:
+            top_results = search_query(self.file_path, vocab, tfidf_data, inverted_index, norm2, idf)
+            duration = time.time() - start
+        except Exception as e:
+            import traceback
+            traceback_str = traceback.format_exc()
+            messagebox.showerror("Lỗi", f"{type(e).__name__}: {e}\n\n{traceback_str}")
+            self.result_label.config(text="")
+            self.choose_btn.config(state=tk.NORMAL)
+            self.search_btn.config(state=tk.NORMAL)
+            return
 
+        # Cập nhật GUI trên luồng chính
+        self.root.after(0, lambda: self.show_results(top_results, duration))
+
+    def show_results(self, top_results, duration):
         self.result_label.config(text=f"Thời gian tìm kiếm: {duration:.2f} giây")
-
         for i, lbl in enumerate(self.result_links):
             if i < len(top_results):
                 doc_id = top_results[i][0]
@@ -60,6 +88,9 @@ class SearchApp:
             else:
                 lbl.config(text="")
                 lbl.file_path = None
+
+        self.choose_btn.config(state=tk.NORMAL)
+        self.search_btn.config(state=tk.NORMAL)
 
     def open_file(self, event):
         file_path = event.widget.file_path

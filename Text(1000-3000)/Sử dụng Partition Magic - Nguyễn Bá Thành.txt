@@ -1,0 +1,92 @@
+
+Nguyễn Bá Thành
+Sử dụng Partition Magic
+Giới thiệu
+PartitionMagic là sản phẩm của hãng Power Quest. Với PartitionMagic bạn có thể: Tạo thêm partition mới, ghép 2 partition thành 1 partition, thay đổi kích thước, di chuyển một partition, chuyển đổi giữa các kiểu FAT16, FAT32, NTFS...mà không làm mất dữ liệu trên các partition đã có. Format partition, xoá partition, copy partition và thực hiện các chức năng nâng cao khác một cách nhanh chóng. Tất cả các thao tác với PartitionMargic đều được thực hiện qua giao diện đồ hoạ trực quan giúp bạn thao tác thuận tiện và dễ dàng hơn.Hiện nay đã có PartitionMargic version 6.0. Nhưng trong bài này, tôi sẽ trình bày cách sử dụng PartitionMargic 5.0. Với các version khác, giao diện và thao tác hoàn toàn tương tự.Nguyễn Bá Thành(16/05/2001)
+Nguyễn Bá Thành
+Sử dụng Partition Magic
+Download và cài đặt
+Phiên bản đầy đủ của PartitionMagic cũng khá lớn và có thể chạy ở DOS hoặc Windows. Nhưng bản rút gon, chạy được trong DOS thì vừa đủ trong 1 đĩa mềm 1.44Mb. Bạn có thể download PartitionMagic bản rút gọn tại đây (1.06Mb). Sau khi download, bạn hãy unzip và copy tất cả các file vào đĩa mềm (để có thể cơ động đem đi được). Bạn cũng có copy vào đĩa cứng nhưng chú ý là phải boot máy ở DOS mode thì mới chạy được! 							
+Nguyễn Bá Thành
+Sử dụng Partition Magic
+Một số thuật ngữ
+Partition (phân vùng): một đĩa cứng vật lý có thể được chia thành nhiều partition. Mỗi partition có thể được xem như là một ổ đĩa (C: D: E:...trong DOS/Windows) hoặc là một thư mục (folder) (trong Linux/Unix) tuỳ thuộc vào hệ điều hành qui định. 
+Primary Partition (phân vùng chính): một đĩa cứng chỉ có thể có tối đa 4 Primary Partition; và chỉ có hệ điều hành nào được cài đặt trên Primary Partition mới có thể khởi động (boot) được. 
+Logical Partition (phân vùng logíc): để có thể chia được thành nhiều partition hơn trong khi chỉ có tối đa 4 primary partition, một primary parttion phải &quot;hi sinh&quot; để chứa các Logical Partition. Partition đặc biệt này được gọi là Extended Partition (phân vùng mở rộng) và chỉ có nhiệm vụ duy nhất là chứa các Logical Partition. Số lượng Logical Partition có thể tạo trên lý thuyết là vô hạn.Nhược điểm của Logical Partition là không thể boot được từ Logical Partion. Ý tưởng của Logical Partion lúc đầu chỉ là để lưu trữ dữ liệu. Tuy nhiên một số hệ điều hành đời mới (Linux) có thể được cài trên Logical Partition mà vẫn boot được (bằng cách sử dụng thêm một số chương trình tiện ích,  hoặc chính hệ điều hành tạo ra một đoạn mã khởi động cho riêng mình và đặt trong Master Boot Record của đĩa cứng nhằm mục đích &quot;qua mặt&quot; BIOS của máy tính). 
+FAT, FAT32, NTFS: là các hệ thống lưu trữ file của DOS và Windows.FAT (hay còn gọi là FAT16) được hỗ trợ bởi DOS và Windows (mọi phiên bản).FAT32 (mở rộng của FAT16) được hỗ trợ bởi Win95 (phiên bản 2), Win98, WinME và Win2k.NTFS (có thêm nhiều chức năng như nén và mã hoá dữ liệu) chỉ được hỗ trợ bởi WinNT và Win2k. 
+HPFS: là hệ thống lưu trữ file của hệ điều hành OS/2. HPFS cũng được WinNT 4.0 hỗ trợ (Win2k thì không, Win2k sẽ chuyển HPFS sang NTFS). 
+Linux Ext2, Linux Swap: hệ thống file của hệ điều hành Linux. 
+Nguyễn Bá Thành
+Sử dụng Partition Magic
+Chạy PartitionMargic
+Bạn phải khởi động máy tính MSDOS mode (dùng đĩa mềm hoặc &quot;Restart in MSDOS mode&quot; với Win9x) thì mới có thể chạy PartitionMagic được. Màn hình chính của PartitionMagic như sau (có thể khác trên máy bạn, tuỳ thuộc vào tình trạng hiện thời của đĩa cứng đang có trên máy của bạn):Trên cùng là Menu của chương trình, ngay phía dưới là ToolBar. Tiếp theo là một loạt các khối &quot;xanh xanh đỏ đỏ&quot; biểu thị các partition hiện có trên đĩa cứng hiện thời của bạn. Cuối cùng là bảng liệt kê chi tiết về thông số của các partition hiện có trên đĩa cứng. Nút Apply dùng để ghi các chỉnh sửa của bạn vào đĩa (chỉ khi nào bạn nhấn Apply thì các thông tin mới thực sự được ghi vào đĩa). Nút Exit thì chắc là bạn biết rồi! Nhấn vào Exit sẽ thoát khỏi chương trình. Nếu bạn nhấn nút phải mouse lên 1 mục trong bảnng liệt kê thì bạn sẽ thấy 1 menu như sau:hầu hết các thao tác đều có thể được truy cập qua menu này. Chú ý: Tất cả các thao tác chỉ bắt đầu thực sự có hiệu lực (ghi các thay đổi vào đĩa cứng) khi bạn nhấn vào nút Apply (hoặc chọn lệnh Apply Changes ở menu General, hoặc click vào biểu tượng Apply Changes trên Tool Bar). 
+Nguyễn Bá Thành
+Sử dụng Partition Magic
+Tạo partition
+Bạn có thể thực hiện thao tác này bằng cách: Chọn phần đĩa cứng còn trống trong bảng liệt kê. Vào menu Operations rồi chọn Create...Hoặc click phải mouse lên phần đĩa cứng còn trống trong bảng liệt kê rồi chọn Create... trên popup menu. Sau khi bạn chọn thao tác Create. Một dialog box (hộp thoại) sẽ xuất hiện:Trong phần Create as bạn chọn partition mới sẽ là Primary Partion hay là Logical Partition. Trong phần Partition Type bạn chọn kiểu hệ thống file (FAT, FAT32...) cho Partition sẽ được tạo. Partition mới sẽ được tự động format với kiểu hệ thống file mà bạn chọn. Nếu bạn chọn là Unformatted thì chỉ có Partition mới được tạo mà không được format. Bạn cũng có thể đặt &quot;tên&quot; cho Partition mới bằng cách nhập tên vào ô Label. Phần Size là để bạn chọn kích thước cho Partition mới.Chú ý: nếu bạn cọn hệ thống file là FAT thì kích thước của Partition chỉ có thể tối đa là 2Gb. Và cuối cùng, nếu như bạn chọn kích thước của partition mới nhỏ hơn kích thước lớn nhất có thể (giá trị lớn nhất trong ô Size) thì bạn có thể chọn để partition mới nằm ở đầu hoặc ở cuối vùng đĩa còn trống. Nếu bạn chọn Beginning of freespace thì phần đĩa còn trống (sau khi tạo partition) sẽ nằm tiếp ngay sau Partition mới, còn nếu bạn chọn End of free space thì phần đĩa còn trống sẽ nằm ngay trước Partition mới tạo. Và đến đây bạn chỉ phải click vào nút OK là hoàn tất thao tác! 							
+Nguyễn Bá Thành
+Sử dụng Partition Magic
+Format Partition
+Chọn 1 partition trong bảng liệt kê rồi vào menu Operations, chọn Format... hoặc right click lên 1 partition trong bảng liệt kê rồi chọn Format...Hộp thoại Format sẽ xuất hiện. Bạn chọn kiểu hệ thống file ở phần Partition Type, Nhập vào &quot;tên&quot; cho partition ở ô Label (tuỳ chọn, có thể để trống), Gõ chữ OK vào ô Type OK to confirm parititon format (bắt buộc), và nhấn OK để hoàn tất thao tác! Chú ý: Nếu như kích thước của partition mà bạn format lớn hơn 2Gb thì bạn sẽ không được phép chọn FAT trong phần Parttition Type. 							
+Nguyễn Bá Thành
+Sử dụng Partition Magic
+Xoá Partition
+Chọn 1 partition trong bảng liệt kê, vào menu Operations rồi chọn Delete... hoặc right click lên 1 partition trong bảng liệt kê rồi chọn Delete...Hộp thoại Delete sẽ xuất hiện. Gõ chữ OK vào ô Type OK to confirm parititon deletion (bắt buộc), và nhấn OK để hoàn tất thao tác! 
+Nguyễn Bá Thành
+Sử dụng Partition Magic
+Di chuyển/Thay đổi kích thước Partition
+Chọn 1 partition trong bảng liệt kê, vào menu Operations rồi chọn Resize/Move... hoặc right click lên 1 partition trong bảng liệt kê rồi chọn Resize/Move...Một hộp thoại sẽ xuất hiện. Bạn có thể dùng mouse &quot;nắm và kéo&quot; trực tiếp phần graph biểu thị cho partition (trên cùng), hoặc nhập trực tiếp các thông số vào các ô Free  Space Before, New Size và Free Space After, nhấn OK để hoàn tất thao tác! Chú ý: Toàn bộ cấu trúc của partition có thể sẽ phải được điều chỉnh lại nên thời gian thực hiện thao tác này sẽ rất lâu nếu như đĩa cứng của bạn chậm hoặc partiton có kích thước lớn. Nếu có thể, bạn nên backup toàn bộ data của partition, xoá partition cũ, tạo lại partition với kích thước mới rồi restore data thì sẽ nhanh hơn rất nhiều. 							
+Nguyễn Bá Thành
+Sử dụng Partition Magic
+Copy Partition
+Chọn 1 partition trong bảng liệt kê, vào menu Operations rồi chọn Copy... hoặc right click lên 1 partition trong bảng liệt kê rồi chọn Copy...Một hộp thoại sẽ xuất hiện. Bạn có thể copy partition từ đĩa cứng này sang đĩa cứng khác bằng cách chọn đĩa cứng đích trong mục Disk.Tiếp theo bạn chọn partition đích bằng cách click vào biểu tượng của các partition hoặc chọn 1 partition trong danh sách. Trong hình minh hoạ chỉ có 1 partition bạn được phép chọn là 1 partition chưa được format, có dung lượng là 456.8Mb.Nhấn OK để bắt đầu quá trình copy.Chú ý:Để có thể thực hiện được lệnh copy, đĩa cứng của bạn phải có ít nhất 1 partition trống có dung lượng lớn hơn hoặc bằng partition mà bạn định copy. Thời gian copy nhanh hay chậm tuỳ thuộc vào tốc độ của máy bạn và dung lượng cần copy lớn hay bé. 
+Nguyễn Bá Thành
+Sử dụng Partition Magic
+Ghép 2 partition lại thành 1 partition
+Chọn 1 partition trong bảng liệt kê, vào menu Operations rồi chọn Merge... hoặc right click lên 1 partition trong bảng liệt kê rồi chọn Merge...Một hộp thoại sẽ xuất hiện. Bạn có thể chọn 1 trong các kiểu ghép như sau:- Partition bạn chọn sẽ được chuyển thành 1 thư mục nằm trên 1 partition cạnh nó.- Partiton cạnh partition bạn chọn sẽ được chuyển thành 1 thư mục trên partition mà bạn đã chọn.Ta gọi partition bị chuyển thành thư mục là partition khách; partition còn lại là partition chủ. Sau khi chọn kiểu ghép, bạn chọn tên cho thư mục sẽ chứa nội dung (phần dữ liệu) của partition khách trong ô Folder Name.Chọn kiểu hệ thống file cho partition kết quả trong phần File System File.Nhấn OK để bắt đầu quá trình ghép.Chú ý:Bạn chỉ có thể ghép 2 partition nằn cạnh nhau (2 partition nằm cạnh nhau trong bảng liệt kê).Sau khi ghép, partition mới sẽ có kích thước bằng tổngkích thước của 2 partition con.Backup dữ liệu trước khi thực hiện quá trình ghép.Quá trình ghép có thể sẽ được thực hiện trong một thời gian khá dài nếu như dữ liệu trong 2 partition ghép và được ghép là lớn. 
+Nguyễn Bá Thành
+Sử dụng Partition Magic
+Chuyển đổi kiểu file hệ thống của partition
+Chọn 1 partition trong bảng liệt kê, vào menu Operations rồi chọn Convert hoặc right click lên 1 partition trong bảng liệt kê rồi chọn Convert. Một menu con sẽ xuất hiện. Bạn có thể chọn một trong các kiểu chuyển đổi:- Từ FAT sang FAT32, HPFS  hiặc NTFS;- Từ FAT32 sanga FAT;- Từ NTFS sang FAT hoặc FAT32.Ngoài ra bạn cũng có thể chuyển 1 partition từ Logical thành Primary và ngược lại.Chú ý:Backup dữ liệu trước khi thực hiện quá trình chuyển đổi.Thời gian chuyển đổi kiểu hệ thống file có thể sẽ rất lâu đối với partition có dung lượng lớn.
+Nguyễn Bá Thành
+Sử dụng Partition Magic
+Các thao tác nâng cao
+Chọn 1 partition trong bảng liệt kê, vào menu Operations rồi chọn Advanced hoặc right click lên 1 partition trong bảng liệt kê rồi chọn Advanced.Một menu con sẽ xuất hiện. Bad Sector Retest: kiểm tra các sector được đánh dấu là &quot;bad&quot; trên đĩa cứng xem thử nó có còn sử dụng được nữa hay không.Hide Partition: làm &quot;ẩn&quot; partition; partition sau khi làm ẩn thì hệ điều hành sẽ không còn nhận ra được nữa. Để làm &quot;xuất hiện&quot; lại partition, bạn chọn lệnh Unhide Partition. (nếu bạn chọn Advanced trên 1 partion đã bị ẩn thì lệnh Hide Partition sẽ được thay bằng lệnh Unhide Partition).Resize Root: thay đổi số lượng file và thư mục con mà thư mục gốc có thể lưu trữ.Set Active: làm cho partiton &quot;active&quot;. Tại một thời điểm chỉ có thể có 1 partion được active, và hệ điều hành nào cài trên partion active sẽ được chọn khởi động lúc bật máy.Resize Clusters: thay đổi kích thước của 1 cluster. Cluster là một nhóm các sector. Mỗi lần đọc/ghi đĩa cứng ta đều truy xuất từng cluster chứ không phải là từng sector; làm như thế sẽ tăng tốc độ truy xuất đĩa cứng. Thay đổi kích thước cluster chính là thay đổi số sector trong một cluster. Số sector trong 1 cluster càng lớn thì đĩa cứng truy xuất càng nhanh; nhưng cũng sẽ gây lãng phí dung lượng đĩa nhiều hơn.
+Nguyễn Bá Thành
+Sử dụng Partition Magic
+Các thao tác khác
+Kiển tra lỗi
+: chọn 1 partition trong bảng liệt kê, vào menu Operations rồi chọn Check for Errors...hoặc right click lên 1 partition trong bảng liệt kê rồi chọn Check for Errors...Thông tin về partition: chọn 1 partition trong bảng liệt kê, vào menu Operations rồi chọn Info...hoặc right click lên 1 partition trong bảng liệt kê rồi chọn Info...Tăng tốc độ các thao tác: bạn vào menu General rồi chọn Preferences...Trong phần Skip bad sector checks, bạn hãy đánh dấu chọn tất cả các partition trong danh sách. Lựa chọn này sẽ làm cho tốc độ của các thao tác nhanh hơn khoảng 30-50% (xem hình minh hoạ)
+Nguyễn Bá Thành
+Sử dụng Partition Magic
+Lưu ý
+Một số lưu ý chung:
+Hãy backup dữ liệu trước khi thực hiện các thao tác.
+Các thao tác chỉ thực sự thi hành khi bạn nhấn vào nút Apply (hoặc chọn lệnh Apply Changes ở menu General, hoặc click vào biểu tượng Apply Changes trên Tool Bar). 
+Một khi các thao tác đã thực sự thi hành, bạn hãy để nó tự kết thúc, không nên ngắt ngang công việc của Partition Magic, nếu không bạn có thể bị mất toàn bộ dữ liệu của đĩa cứng.
+Các con số giới hạn:
+32Mb: Hệ điều hành DOS các version trước 3.3 không truy xuất được các partition có dung lượng lớn hơn 32Mb.
+512Mb: Đây là &quot;mức ngăn cách giữa&quot; FAT và FAT32. Theo Microsoft khuyến cáo thì nếu partion có dung lượng từ 512Mb trở xuống thì bạn nên dùng FAT, nếu từ 512Mb trở lên thì nên dùng FAT32.
+2Gb: Đây là giới hạn của FAT, hệ thống file FAT không thể quản lý partition lớn hơn 2Gb. Một số hệ điều hành gặp trục trặc với partition lớn hơn 2Gb (DOS 6.x, WinNT 4 không thể format được partition lớn hơn 2Gb).
+1024 cylinder/2Gb: một số BIOS không thể nạp hệ điều hành nằm ngoài vùng 1024 cylinder đầu tiên hoặc 2Gb đầu tiên của đĩa cứng. Hay nói cách khác là một số hệ điều hành cài trên vùng partition nằm ngoài giới hạn 1024 cylinder hoặc 2Gb sẽ không thể khởi động.
+8.4Gb: các mainboard cũ (trước năm 2000) có thể không nhận ra đĩa cứng có dung lượng lớn hơn 8.4Gb. WinNT 4 cũng không thể quản lý được partition lớn hơn 8.4Gb. 
+1 active partition: tại một thời điểm chỉ có thể có 1 partition được active.
+4 primary partition: 1 đĩa cứng chỉ có thể có tối đa 4 partition, tuy nhiên số logical partition là không giới hạn.
+2 primary partition: một số hệ điều hành bị lỗi (Win98, WinME...) nếu như cùng một lúc có 2 primary partition không &quot;ẩn&quot;; để giải quyết vấn đề bạn chỉ cần làm &quot;ẩn&quot; 1 trong 2 partition.
+Mục lục
+Giới thiệu
+Download và cài đặt
+Một số thuật ngữ
+Chạy PartitionMargic
+Tạo partition
+Format Partition
+Xoá Partition
+Di chuyển/Thay đổi kích thước Partition
+Copy Partition
+Ghép 2 partition lại thành 1 partition
+Chuyển đổi kiểu file hệ thống của partition
+Các thao tác nâng cao
+Các thao tác khác
+Lưu ý
+Sử dụng Partition Magic
+Nguyễn Bá ThànhChào mừng các bạn đón đọc đầu sách từ dự án sách cho thiết bị di độngNguồn: http://vnthuquan.netPhát hành: Nguyễn Kim Vỹ.Lời cuối:Cám ơn bạn đã theo dõi hết cuốn truyện.Nguồn: http://vnthuquan.netPhát hành: Nguyễn Kim Vỹ.        Nguồn: diendantinhoc.netĐược bạn: mickey đưa lên        vào ngày: 20 tháng 8 năm 2004

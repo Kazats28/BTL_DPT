@@ -1,26 +1,17 @@
-import math
-import time
 from collections import Counter
 
-def cosine_similarity_sparse(vec1, vec2):
-    dot = sum(vec1.get(k, 0) * vec2.get(k, 0) for k in set(vec1) | set(vec2))
-    norm1 = math.sqrt(sum(v**2 for v in vec1.values()))
-    norm2 = math.sqrt(sum(v**2 for v in vec2.values()))
+def cosine_similarity_sparse(vec1, vec2, norm1, norm2):
+    # Ưu tiên duyệt dict nhỏ hơn, xóa if nếu không ưu tiên
+    if len(vec1) > len(vec2):
+        vec1, vec2 = vec2, vec1
+        norm1, norm2 = norm2, norm1
+    dot = sum(val * vec2.get(k, 0) for k, val in vec1.items())
     return dot / (norm1 * norm2) if norm1 and norm2 else 0.0
 
-def build_query_vector(tokens, vocab, tfidf_data):
+def build_query_vector(tokens, vocab, idf):
     vocab_index = {term: idx for idx, term in enumerate(vocab)}
     word_count = len(tokens)
     tf = Counter(tokens)
-
-    start2 = time.time()
-    idf = {}
-    for term in vocab:
-        idx = str(vocab_index[term])
-        df = sum(1 for doc in tfidf_data.values() if idx in doc)
-        idf[term] = math.log(len(tfidf_data) / (1 + df))
-    duration2 = time.time() - start2
-    print(f"idf: {duration2:.2f}")
 
     query_vector = {}
     for term in set(tokens):
@@ -31,4 +22,3 @@ def build_query_vector(tokens, vocab, tfidf_data):
             if tfidf > 0:
                 query_vector[str(idx)] = tfidf
     return query_vector
-

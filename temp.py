@@ -17,6 +17,6 @@ for filename in os.listdir(source_folder):
             content = f.read()
             word_count = len(content.split())
 
-        if word_count in range(6000, 10000):
+        if word_count in range(6000, 20000):
             shutil.copy(file_path, os.path.join(destination_folder, filename))
             print(f"Đã sao chép: {filename} ({word_count} từ)")
